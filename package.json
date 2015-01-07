@@ -1,0 +1,40 @@
+{
+  "name": "cloudfront-tls",
+  "version": "1.0.0",
+  "description": "Sets up a cloudfront distribution with custom TLS certificates",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/index.js | faucet",
+    "test-integration": "TEST=integration node test/index.js"
+  },
+  "bin": {
+    "cloudfront-tls": "./cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/klaemo/cloudfront-tls"
+  },
+  "keywords": [
+    "cloudfront",
+    "tls",
+    "aws",
+    "amazon",
+    "static",
+    "website"
+  ],
+  "author": "Clemens Stolle <klaemo@fastmail.fm>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/klaemo/cloudfront-tls/issues"
+  },
+  "homepage": "https://github.com/klaemo/cloudfront-tls",
+  "dependencies": {
+    "async": "^0.9.0",
+    "aws-sdk": "^2.1.4",
+    "commander": "^2.6.0"
+  },
+  "devDependencies": {
+    "faucet": "0.0.1",
+    "tape": "^3.0.3"
+  }
+}
