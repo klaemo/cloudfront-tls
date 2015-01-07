@@ -27,12 +27,13 @@ $ cloudfront-tls -h
     --cert-id <IAM ServerCertId>             The ID of your cert in IAM.
     -c, --cert <cert>                        Path to the public key certificate.
     -k, --key <key>                          Path to the private key.
+    -n, --cert-name <certificate name>       A unique name for the server certificate.
     -i, --intermediate <intermediate certs>  Path to the concatenated intermediate certificates.
 
 ```
 
 All the options are optional ;-). When using `--cert-id` you don't need to provide `cert`, `key` and `intermediate`.
-If you don't already have your certificate in IAM, provide at least `cert` and `key` so they can be uploaded to IAM for you.
+If you don't already have your certificate in IAM, provide at least `cert`, `key` and 'cert-name' so it can be uploaded to IAM for you.
 
 `cloudfront-tls -a www.my-site.com my-bucket.s3.aws.com` creates a distribution for the specified origin and
 sets up the alias `www.my-site.com`.
@@ -48,9 +49,10 @@ cloudfront({
   aliases: ['www.my-site.com'], // optional aliases
   certId: 'foobar', // If you already have your cert in IAM, provide its id here
 
-  // otherwise provide at least cert and key if you want to use your own certificate
+  // otherwise provide at least cert, certName and key if you want to use your own certificate
   cert: 'foo.crt', // Path to the public key certificate
   key: 'foo.key', // Path to the private key
+  certName: 'my-cert', // A unique name for the server certificate
   intermediate: 'chain.crt', // Path to the concatenated intermediate certificates (optional)
 }, function(err, distribution) {
   if (err) throw err

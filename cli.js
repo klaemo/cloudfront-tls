@@ -12,6 +12,7 @@ program
   .option('--cert-id <IAM ServerCertId>', 'The ID of your cert in IAM.')
   .option('-c, --cert <cert>', 'Path to the public key certificate.')
   .option('-k, --key <key>', 'Path to the private key.')
+  .option('-n, --cert-name <certificate name>', 'A unique name for the server certificate.')
   .option('-i, --intermediate <intermediate certs>', 'Path to the concatenated intermediate certificates.')
   .parse(process.argv)
 
