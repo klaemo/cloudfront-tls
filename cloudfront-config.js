@@ -1,7 +1,6 @@
 module.exports = function (config) {
   config.aliases = config.aliases || []
-
-  return {
+  var defaultConfig = {
     DistributionConfig: {
       Enabled: true,
       Aliases: {
@@ -64,4 +63,7 @@ module.exports = function (config) {
       }
     }
   }
+
+  var config = Object.assign({}, defaultConfig.DistributionConfig, config.DistributionConfig);
+  return {DistributionConfig: config};
 }
