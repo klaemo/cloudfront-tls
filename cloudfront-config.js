@@ -31,7 +31,7 @@ module.exports = function (config) {
       CacheBehaviors: {
         Quantity: 0
       },
-      DefaultRootObject: '/',
+      DefaultRootObject: config.index,
       Origins: {
         Quantity: 1,
         Items: [
