@@ -1,6 +1,6 @@
 {
-  "name": "cloudfront-tls",
-  "version": "1.0.0",
+  "name": "@rlyle1179/cloudfront-tls",
+  "version": "1.0.1",
   "description": "Sets up a cloudfront distribution with custom TLS certificates",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/klaemo/cloudfront-tls"
+    "url": "https://github.com/rlyle/cloudfront-tls"
   },
   "keywords": [
     "cloudfront",
@@ -25,9 +25,9 @@
   "author": "Clemens Stolle <klaemo@fastmail.fm>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/klaemo/cloudfront-tls/issues"
+    "url": "https://github.com/rlyle/cloudfront-tls/issues"
   },
-  "homepage": "https://github.com/klaemo/cloudfront-tls",
+  "homepage": "https://github.com/rlyle/cloudfront-tls",
   "dependencies": {
     "async": "^0.9.0",
     "aws-sdk": "^2.1.4",
