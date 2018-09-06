@@ -57,7 +57,7 @@ module.exports = function (config) {
       },
       PriceClass: 'PriceClass_100',
       ViewerCertificate: {
-        CloudFrontDefaultCertificate: !(config.certId && config.acmCertId),
+        CloudFrontDefaultCertificate: !config.certId && !config.acmCertId,
         ACMCertificateArn: config.acmCertId,
         IAMCertificateId: config.certId,
         MinimumProtocolVersion: 'TLSv1',
