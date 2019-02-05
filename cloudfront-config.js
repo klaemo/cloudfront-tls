@@ -31,7 +31,7 @@ module.exports = function (config) {
       CacheBehaviors: {
         Quantity: 0
       },
-      DefaultRootObject: '/',
+      DefaultRootObject: config.index,
       Origins: {
         Quantity: 1,
         Items: [
@@ -57,7 +57,8 @@ module.exports = function (config) {
       },
       PriceClass: 'PriceClass_100',
       ViewerCertificate: {
-        CloudFrontDefaultCertificate: !config.certId,
+        CloudFrontDefaultCertificate: !config.certId && !config.acmCertId,
+        ACMCertificateArn: config.acmCertId,
         IAMCertificateId: config.certId,
         MinimumProtocolVersion: 'TLSv1',
         SSLSupportMethod: 'sni-only'
